@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" font-family="CaskaydiaCove Nerd Font Mono,Consolas,monospace" width="920px" height="460px" font-size="16px">
+<style>
+  .keyColor {fill: #953800;}
+  .valueColor {fill: #0a3069;}
+  .addColor {fill: #1a7f37;}
+  .delColor {fill: #cf222e;}
+  .commentColor {fill: #8b949e;}
+  .ascii { font-size: 18px; }
+  text, tspan {white-space: pre;}
+</style>
+
+<rect width="920px" height="460px" fill="#f6f8fa" rx="15"/>
+
+<text x="20" y="40" textLength="350" lengthAdjust="spacingAndGlyphs" fill="#24292f" class="ascii">
+  <tspan x="20" y="40">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</tspan>
+  <tspan x="20" y="56">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⠟⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</tspan>
+  <tspan x="20" y="72">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠞⠁⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠠⣄⠀⠀⠀⠀⠀⠀⠀</tspan>
+  <tspan x="20" y="88">⠀⠀⠀⠀⠀⠀⠀⠀⢀⡎⠈⠀⠀⠀⠀⠀⠀⠀⠁⠐⠀⢀⡘⢥⡈⠳⠂⠀⠀⠀⠀⠀⠉⢲⠀⠀⠀⠀⠀</tspan>
+  <tspan x="20" y="104">⠀⠀⠀⠀⠀⠀⠀⠀⣸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠸⠧⣀⡆⠀⠀⠀⠀⠀⠄⡀⠀⠀⠀⠀</tspan>
+  <tspan x="20" y="120">⠀⠀⠀⠀⠀⠀⠀⠀⣿⡇⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⢠⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠄⠀⠀⠀</tspan>
+  <tspan x="20" y="136">⠀⠀⠀⠀⠀⠀⠀⢸⣿⠓⣰⠀⢸⡄⠀⠀⠀⠀⠀⠀⠀⠈⠃⠀⠀⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⡄⠀⠀⠀</tspan>
+  <tspan x="20" y="152">⠀⠀⠀⠀⠀⠀⠀⣿⣷⣾⣿⠀⢸⣧⢠⠀⠀⠀⠀⠀⠀⠀⠀⢰⣀⠀⠠⠀⠀⠀⠀⠀⠀⠀⠀⠸⠀⠀⠀</tspan>
+  <tspan x="20" y="168">⠀⠀⠀⠀⠀⠀⢰⣿⣿⣯⣿⡄⠸⣿⣿⣆⠀⠀⠀⠀⠀⠀⠖⢉⣃⣠⣄⣡⠀⢷⣄⠠⡄⠀⠀⠀⠀⠀⠀</tspan>
+  <tspan x="20" y="184">⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⡀⣿⢹⣿⣧⡀⡄⢀⠀⠘⠈⡜⠉⢼⡿⠁⢹⢴⠘⣦⡀⠀⠀⠠⠀⠀⠀</tspan>
+  <tspan x="20" y="200">⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⢚⣽⢮⣿⣾⣮⠁⠀⠀⠁⠀⠀⠀⢀⠈⠈⠀⠘⠁⠀⠀⠀⠀⠀⠀</tspan>
+  <tspan x="20" y="216">⠀⠀⢀⠀⠲⢋⣹⣿⣿⣿⣿⣿⣿⣿⣿⠃⠻⠿⠈⢻⠦⡀⠀⠀⠀⠀⠐⠉⠀⠀⡠⠁⠀⠀⡞⠀⠀⠀⠀</tspan>
+  <tspan x="20" y="232">⠀⢰⠁⠀⠀⠀⠈⠙⣿⣿⣿⡿⢿⣿⣿⣟⠒⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠞⠁⠀⠀⡰⠁⠀⠀⠀⠀</tspan>
+  <tspan x="20" y="248">⠀⠀⠀⠀⠀⠀⠀⠀⢋⣿⣿⣿⣿⣿⣟⣿⣏⠀⠀⠀⠈⠀⣀⣀⠀⠀⠒⢉⠔⣫⡄⡀⡸⠁⠀⠀⠀⠀⠀</tspan>
+  <tspan x="20" y="264">⠀⠀⠀⢀⡓⠂⣠⠴⣿⣿⣿⣿⠉⠙⣿⣿⣿⣷⣄⠀⠀⠀⠁⠀⠀⠀⠀⢀⠜⠀⠀⡇⠁⠀⠀⠀⠀⠀⠀</tspan>
+  <tspan x="20" y="280">⢀⣤⠆⠉⠉⠉⠁⠀⠈⠙⠛⠛⠿⠿⣿⣿⣿⣿⣿⣿⣶⣤⣄⡀⠀⢀⣔⣁⣀⣴⠀⠀⠀⠀⠀⠀⠀⠀⠀</tspan>
+  <tspan x="20" y="296">⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠿⢹⠟⡿⠋⠰⢿⣿⣿⣿⣶⣿⣿⡿⠟⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀</tspan>
+  <tspan x="20" y="312">⣀⣤⣤⣤⣤⣤⣤⣄⡀⠀⠀⠀⠀⠐⠠⣈⡈⠀⢀⣴⣿⣿⣿⣿⠊⢿⡟⢀⣴⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀</tspan>
+  <tspan x="20" y="328">⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣤⡀⠀⠀⣽⣿⣿⣿⣿⣿⡿⠂⠀⠀⠀⠀⠀⠀⠀⠲⣤⣀⠀⠀⠀⠀⠀</tspan>
+</text>
+
+<text x="380" y="30" fill="#24292f">
+  <tspan x="380" y="30">ugly@custard</tspan>
+  <tspan x="380" y="50">————————————</tspan>
+  <tspan x="380" y="70" class="keyColor">Name</tspan>: <tspan class="valueColor">Himanshu Mishra</tspan>
+  <tspan x="380" y="90" class="keyColor">Location</tspan>: <tspan class="valueColor">Mumabi, India</tspan>
+  <tspan x="380" y="110" class="keyColor">Major</tspan>: <tspan class="valueColor">Artifical Intelligence and Data Science</tspan><tspan class="commentColor"> #AInDS</tspan>
+  <tspan x="380" y="130" class="keyColor">Editor</tspan>: <tspan class="valueColor">NeoVim, VSCode</tspan>
+</text>
+
+<text x="380" y="150" fill="#24292f">
+  <tspan x="380" y="170" class="keyColor">Languages and Tools</tspan>:
+  <tspan x="380" y="190">———————————————————</tspan>
+  <tspan x="380" y="210" class="valueColor">Python, JS/TS, HTML/CSS, C/C++</tspan><tspan class="commentColor"> #Langs</tspan>
+  <tspan x="380" y="230" class="valueColor">Tensorflow, PyTorch, SciKit Learn, OpenCV</tspan><tspan class="commentColor"> #Py Libs</tspan>
+  <tspan x="380" y="250" class="valueColor">React, Express, NodeJs, Flask, FastAPI</tspan><tspan class="commentColor"> #Web Dev</tspan>
+  <tspan x="380" y="270" class="valueColor">PostgreSQL, MongoDB, Knex, Mongoose, PyMongo</tspan><tspan class="commentColor"> #DB</tspan>
+  <tspan x="380" y="290" class="valueColor">Git/Github, Docker, AWS, Postman, JupyterLab</tspan><tspan class="commentColor"> #Tech</tspan>
+  <tspan x="380" y="310" class="valueColor">English, Hindi</tspan><tspan class="commentColor"> #Real Langs</tspan>
+</text>
+
+<text x="20" y="360" fill="#24292f">
+  <tspan x="20" y="360" class="keyColor">Contact</tspan>:
+  <tspan x="20" y="380">———————</tspan>
+  <tspan x="20" y="400" class="keyColor">Email</tspan>: <tspan class="valueColor">himanshu.mishra1123@gmail.com</tspan>
+  <tspan x="20" y="420" class="keyColor">LinkedIn</tspan>: <tspan class="valueColor">himanshu-mishra1123</tspan>
+  <tspan x="20" y="440" class="keyColor">Discord</tspan>: <tspan class="valueColor">uglycustard</tspan>
+</text>
+
+<text x="380" y="360" fill="#24292f">
+  <tspan x="380" y="360" class="keyColor">GitHub Stats</tspan>:
+  <tspan x="380" y="380">————————————</tspan>
+  <tspan x="380" y="400" class="keyColor">Repos</tspan>: <tspan class="valueColor">32</tspan> {<tspan class="keyColor">Contributed</tspan>: <tspan class="valueColor">44</tspan>} | <tspan class="keyColor">Stars</tspan>: <tspan class="valueColor">9</tspan>
+  <tspan x="380" y="420" class="keyColor">Commmits</tspan>: <tspan class="valueColor">484</tspan> | <tspan class="keyColor">Issues</tspan>: <tspan class="valueColor">7</tspan> | <tspan class="keyColor">PRs</tspan>: <tspan class="valueColor">50</tspan>
+  <tspan x="380" y="440" class="keyColor">Lines of Code</tspan>: <tspan class="valueColor">879,084</tspan> (<tspan class="addColor">971,599++</tspan>, <tspan class="delColor">92,515--</tspan>)
+</text>
+
+</svg>
