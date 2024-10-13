@@ -37,7 +37,7 @@
   <tspan x="380" y="30">ugly@custard</tspan>
   <tspan x="380" y="50">————————————</tspan>
   <tspan x="380" y="70" class="keyColor">Name</tspan>: <tspan class="valueColor">Himanshu Mishra</tspan>
-  <tspan x="380" y="90" class="keyColor">Location</tspan>: <tspan class="valueColor">Mumabi, India</tspan>
+  <tspan x="380" y="90" class="keyColor">Location</tspan>: <tspan class="valueColor">Mumbai, India</tspan>
   <tspan x="380" y="110" class="keyColor">Major</tspan>: <tspan class="valueColor">Artifical Intelligence and Data Science</tspan><tspan class="commentColor"> #AInDS</tspan>
   <tspan x="380" y="130" class="keyColor">Editor</tspan>: <tspan class="valueColor">NeoVim, VSCode</tspan>
 </text>
