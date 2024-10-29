@@ -64,7 +64,7 @@
 <text x="380" y="360" fill="#c9d1d9">
   <tspan x="380" y="360" class="keyColor">GitHub Stats</tspan>:
   <tspan x="380" y="380">————————————</tspan>
-  <tspan x="380" y="400" class="keyColor">Repos</tspan>: <tspan class="valueColor">34</tspan> {<tspan class="keyColor">Contributed</tspan>: <tspan class="valueColor">46</tspan>} | <tspan class="keyColor">Stars</tspan>: <tspan class="valueColor">9</tspan>
+  <tspan x="380" y="400" class="keyColor">Repos</tspan>: <tspan class="valueColor">34</tspan> {<tspan class="keyColor">Contributed</tspan>: <tspan class="valueColor">46</tspan>} | <tspan class="keyColor">Stars</tspan>: <tspan class="valueColor">10</tspan>
   <tspan x="380" y="420" class="keyColor">Commmits</tspan>: <tspan class="valueColor">489</tspan> | <tspan class="keyColor">Issues</tspan>: <tspan class="valueColor">7</tspan> | <tspan class="keyColor">PRs</tspan>: <tspan class="valueColor">50</tspan>
   <tspan x="380" y="440" class="keyColor">Lines of Code</tspan>: <tspan class="valueColor">881,214</tspan> (<tspan class="addColor">973,737++</tspan>, <tspan class="delColor">92,523--</tspan>)
 </text>
