@@ -11,7 +11,7 @@
 
 <rect width="920px" height="460px" fill="#161b22" rx="15"/>
 
-<text x="20" y="40" textLength="350" lengthAdjust="spacingAndGlyphs" fill="#7AA2F7" class="ascii">
+<text x="20" y="40" textLength="6800" lengthAdjust="spacingAndGlyphs" fill="#7AA2F7" class="ascii">
   <tspan x="20" y="40">⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿</tspan>
   <tspan x="20" y="56">⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⣠⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿</tspan>
   <tspan x="20" y="72">⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣡⣾⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣟⠻⣿⣿⣿⣿⣿⣿⣿⣿</tspan>
