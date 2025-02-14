@@ -19,9 +19,7 @@
   </a>
   </div>
   <div>
-    <a href="https://visitcount.itsvg.in" target="_blank">
-      <img src="https://visitcount.itsvg.in/api?id=ugly-custard&icon=0&color=1" />
-    </a>
+    <img src="https://komarev.com/ghpvc/?username=ugly-custard&color=0e75b6&abbreviated=true&style=for-the-badge" alt="ugly-custard" />
   </div>
 </div>
 
