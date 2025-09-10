@@ -81,8 +81,8 @@
   <tspan x="380" y="360" class="keyColor">GitHub Stats</tspan>:
   <tspan x="380" y="380">————————————</tspan>
   <tspan x="380" y="400" class="keyColor">Repos</tspan>: <tspan class="valueColor">39</tspan> {<tspan class="keyColor">Contributed</tspan>: <tspan class="valueColor">46</tspan>} | <tspan class="keyColor">Stars</tspan>: <tspan class="valueColor">14</tspan>
-  <tspan x="380" y="420" class="keyColor">Commits</tspan>: <tspan class="valueColor">504</tspan> | <tspan class="keyColor">Issues</tspan>: <tspan class="valueColor">7</tspan> | <tspan class="keyColor">PRs</tspan>: <tspan class="valueColor">51</tspan>
-  <tspan x="380" y="440" class="keyColor">Lines of Code</tspan>: <tspan class="valueColor">907,291</tspan> (<tspan class="addColor">1,001,103++</tspan>, <tspan class="delColor">93,812--</tspan>)
+  <tspan x="380" y="420" class="keyColor">Commits</tspan>: <tspan class="valueColor">505</tspan> | <tspan class="keyColor">Issues</tspan>: <tspan class="valueColor">7</tspan> | <tspan class="keyColor">PRs</tspan>: <tspan class="valueColor">51</tspan>
+  <tspan x="380" y="440" class="keyColor">Lines of Code</tspan>: <tspan class="valueColor">908,550</tspan> (<tspan class="addColor">1,002,441++</tspan>, <tspan class="delColor">93,891--</tspan>)
 </text>
 
 </svg>
