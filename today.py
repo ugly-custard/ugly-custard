@@ -22,7 +22,7 @@ QUERY_COUNT = {
     "user_getter": 0,
     "stats_getter": 0,
     "graph_repos_stars": 0,
-    "recursive_loc": 0,
+    "repo_loc": 0,
     "loc_query": 0,
 }
 
@@ -99,87 +99,35 @@ def user_getter(username):
     )
 
 
-def recursive_loc(owner, repo_name, data, cache_comment):
+def repo_loc_via_contributors(owner, repo_name):
     """
-    Uses GitHub's GraphQL v4 API and cursor pagination to fetch 100 commits from a repository at a time
+    Uses GitHub's REST API stats/contributors endpoint to get LOC data
+    for a single repository. Returns (additions, deletions, commit_count).
     """
-    addition_total = 0
-    deletion_total = 0
-    my_commits = 0
-    cursor = None
-
-    query = """
-    query ($repo_name: String!, $owner: String!, $cursor: String) {
-        repository(name: $repo_name, owner: $owner) {
-            defaultBranchRef {
-                target {
-                    ... on Commit {
-                        history(first: 100, after: $cursor) {
-                            totalCount
-                            edges {
-                                node {
-                                    ... on Commit {
-                                        committedDate
-                                    }
-                                    author {
-                                        user {
-                                            id
-                                        }
-                                    }
-                                    deletions
-                                    additions
-                                }
-                            }
-                            pageInfo {
-                                endCursor
-                                hasNextPage
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }"""
-
-    while True:
-        query_count("recursive_loc")
-        variables = {"repo_name": repo_name, "owner": owner, "cursor": cursor}
-        request = requests.post(
-            "https://api.github.com/graphql",
-            json={"query": query, "variables": variables},
-            headers=HEADERS,
-        )
+    url = f"https://api.github.com/repos/{owner}/{repo_name}/stats/contributors"
+    for attempt in range(5):
+        if attempt:
+            time.sleep(2)
+        try:
+            request = requests.get(url, headers=HEADERS, timeout=15)
+        except requests.exceptions.ConnectionError:
+            # ponytail: transient network/rate-limit error, retry with backoff
+            continue
+        if request.status_code == 202:
+            continue  # GitHub is computing stats, retry
         if request.status_code != 200:
-            force_close_file(data, cache_comment)
-            if request.status_code == 403:
-                raise Exception(
-                    "Too many requests in a short amount of time!\nYou've hit the non-documented anti-abuse limit!"
-                )
-            raise Exception(
-                f"recursive_loc() has failed with a {request.status_code}, {request.text}, QUERY_COUNT={QUERY_COUNT}"
-            )
+            return 0, 0, 0
 
-        repo = request.json()["data"]["repository"]
-        if repo["defaultBranchRef"] is None:
-            return 0
-
-        history = repo["defaultBranchRef"]["target"]["history"]
-        for node in history["edges"]:
-            if node["node"]["author"]["user"] == OWNER_ID:
-                my_commits += 1
-                addition_total += node["node"]["additions"]
-                deletion_total += node["node"]["deletions"]
-
-        next_cursor = history["pageInfo"]["endCursor"]
-        if (
-            not history["edges"]
-            or not history["pageInfo"]["hasNextPage"]
-            or next_cursor is None
-            or next_cursor == cursor
-        ):
-            return addition_total, deletion_total, my_commits
-
-        cursor = next_cursor
+        for contributor in request.json():
+            author = contributor.get("author") if contributor else None
+            if author and author.get("login") == USER_NAME:
+                weeks = contributor.get("weeks", [])
+                additions = sum(w["a"] for w in weeks)
+                deletions = sum(w["d"] for w in weeks)
+                commit_count = contributor.get("total", 0)
+                return additions, deletions, commit_count
+        break  # API responded but user not found in contributors
+    return 0, 0, 0
 
 
 def loc_query(
@@ -385,7 +333,7 @@ def cache_builder(edges, comment_size, force_cache, loc_add=0, loc_del=0):
                     # if commit count has changed, update loc for that repo
                     owner, repo_name = edges[index]["node"]["nameWithOwner"].split("/")
                     print(f"  LOC: {repo_name}...", end=" ", flush=True)
-                    loc = recursive_loc(owner, repo_name, data, cache_comment)
+                    loc = repo_loc_via_contributors(owner, repo_name)
                     print(f"+{loc[0]} -{loc[1]}")
                     data[index] = (
                         f"{repo_hash} {edges[index]['node']['defaultBranchRef']['target']['history']['totalCount']} {loc[2]} {loc[0]} {loc[1]}\n"
