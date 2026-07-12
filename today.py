@@ -104,6 +104,7 @@ def repo_loc_via_contributors(owner, repo_name):
     Uses GitHub's REST API stats/contributors endpoint to get LOC data
     for a single repository. Returns (additions, deletions, commit_count).
     """
+    query_count("repo_loc")
     url = f"https://api.github.com/repos/{owner}/{repo_name}/stats/contributors"
     for attempt in range(5):
         if attempt:
