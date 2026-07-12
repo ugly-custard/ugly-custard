@@ -17,6 +17,7 @@ import hashlib
 #       read:Issues, read:Metadata, read:Pull Requests
 HEADERS = {"Authorization": "Bearer " + os.environ["ACCESS_TOKEN"]}
 USER_NAME = os.environ["USER_NAME"]
+CACHE_FILE = "cache/" + hashlib.sha256(USER_NAME.encode("utf-8")).hexdigest() + ".txt"
 QUERY_COUNT = {
     "user_getter": 0,
     "stats_getter": 0,
@@ -250,13 +251,10 @@ def commit_counter(comment_size):
     Counts up my total commits, using the cache file created by cache_builder.
     """
     total_commits = 0
-    filename = (
-        "cache/" + hashlib.sha256(USER_NAME.encode("utf-8")).hexdigest() + ".txt"
-    )  # Use the same filename as cache_builder
+    filename = CACHE_FILE  # Use the same filename as cache_builder
     with open(filename, "r") as f:
         data = f.readlines()
-    cache_comment = data[:comment_size]  # save the comment block
-    data = data[comment_size:]  # remove those lines
+    data = data[comment_size:]
     for line in data:
         total_commits += int(line.split()[2])
     return total_commits
@@ -296,12 +294,21 @@ def graph_repos_stars(count_type, owner_affiliation, cursor=None, add_loc=0, del
     }
     request = simple_request(graph_repos_stars.__name__, query, variables)
     if request.status_code == 200:
+        data = request.json()["data"]["user"]["repositories"]
         if count_type == "repos":
-            return request.json()["data"]["user"]["repositories"]["totalCount"]
+            return data["totalCount"]
         elif count_type == "stars":
             total_stars = 0
-            for node in request.json()["data"]["user"]["repositories"]["edges"]:
-                total_stars += node["node"]["stargazers"]["totalCount"]
+            while True:
+                for node in data["edges"]:
+                    total_stars += node["node"]["stargazers"]["totalCount"]
+                if not data["pageInfo"]["hasNextPage"]:
+                    break
+                variables["cursor"] = data["pageInfo"]["endCursor"]
+                request = simple_request(graph_repos_stars.__name__, query, variables)
+                if request.status_code != 200:
+                    break
+                data = request.json()["data"]["user"]["repositories"]
             return total_stars
 
 
@@ -335,9 +342,7 @@ def cache_builder(edges, comment_size, force_cache, loc_add=0, loc_del=0):
     If it has, run recursive_loc on that repository to update the LOC count
     """
     cached = True  # Assume all repositories are cached
-    filename = (
-        "cache/" + hashlib.sha256(USER_NAME.encode("utf-8")).hexdigest() + ".txt"
-    )  # Create a unique filename for each user
+    filename = CACHE_FILE  # Create a unique filename for each user
     try:
         with open(filename, "r") as f:
             data = f.readlines()
@@ -355,6 +360,7 @@ def cache_builder(edges, comment_size, force_cache, loc_add=0, loc_del=0):
         len(data) - comment_size != len(edges) or force_cache
     ):  # If the number of repos has changed, or force_cache is True
         cached = False
+        print("  Cache miss: flushing cache and recalculating LOC for all repos...")
         flush_cache(edges, filename, comment_size)
         with open(filename, "r") as f:
             data = f.readlines()
@@ -378,12 +384,20 @@ def cache_builder(edges, comment_size, force_cache, loc_add=0, loc_del=0):
                 ):
                     # if commit count has changed, update loc for that repo
                     owner, repo_name = edges[index]["node"]["nameWithOwner"].split("/")
+                    print(f"  LOC: {repo_name}...", end=" ", flush=True)
                     loc = recursive_loc(owner, repo_name, data, cache_comment)
+                    print(f"+{loc[0]} -{loc[1]}")
                     data[index] = (
                         f"{repo_hash} {edges[index]['node']['defaultBranchRef']['target']['history']['totalCount']} {loc[2]} {loc[0]} {loc[1]}\n"
                     )
             except TypeError:  # If the repo is empty
                 data[index] = repo_hash + " 0 0 0 0\n"
+        # Save progress every 10 repos so a cancelled run doesn't lose everything
+        if (index + 1) % 10 == 0:
+            with open(filename, "w") as f:
+                f.writelines(cache_comment)
+                f.writelines(data)
+    # Final save with all LOC data
     with open(filename, "w") as f:
         f.writelines(cache_comment)
         f.writelines(data)
@@ -446,7 +460,7 @@ def force_close_file(data, cache_comment):
     Forces the file to close, preserving whatever data was written to it
     This is needed because if this function is called, the program would've crashed before the file is properly saved and closed
     """
-    filename = "cache/" + hashlib.sha256(USER_NAME.encode("utf-8")).hexdigest() + ".txt"
+    filename = CACHE_FILE
     with open(filename, "w") as f:
         f.writelines(cache_comment)
         f.writelines(data)
