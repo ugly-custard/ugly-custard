@@ -30,19 +30,19 @@
   <p align=center>
     <div style="display: flex; justify-content: space-around;">
       <a href="https://github.com/denvercoder1/github-readme-streak-stats" title="Go to Source">
-        <img align="left" width=390 src="https://github-readme-streak-stats.herokuapp.com/?user=ugly-custard&theme=tokyonight&hide_border=true" alt="ugly-custard" />
+        <img align="left" width=390 src="https://github-readme-streak-stats-taupe-three.vercel.app/?user=ugly-custard&theme=tokyonight&hide_border=true" alt="ugly-custard" />
       </a>
-      <a href="https://github.com/anuraghazra/github-readme-stats" title="Go to Source">
-        <img align="right" width=390 src="https://github-readme-stats.vercel.app/api?username=ugly-custard&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=false" />
+      <a href="https://github.com/stats-organization/github-stats-extended" title="Go to Source">
+        <img align="right" width=390 src="https://github-stats-extended-frontend-indol.vercel.app/api?username=ugly-custard&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=false" />
       </a>
     </div>
     <br><br>
     <div style="display: flex; justify-content: space-around;">
-      <a href="https://github.com/anuraghazra/github-readme-stats">
-        <img height=200 src="https://github-readme-stats.vercel.app/api/top-langs/?username=ugly-custard&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=false&layout=compact" />
+      <a href="https://github.com/stats-organization/github-stats-extended">
+        <img height=200 src="https://github-stats-extended-frontend-indol.vercel.app/api/top-langs/?username=ugly-custard&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=false&layout=compact" />
       </a>
       <a href="https://github.com/ryo-ma/github-profile-trophy">
-        <img height=200 src="https://github-profile-trophy.vercel.app/?username=ugly-custard&theme=tokyonight&row=2&column=3" />
+        <img height=200 src="https://github-profile-trophy-bay-iota.vercel.app/?username=ugly-custard&theme=tokyonight&row=2&column=3" />
       </a>
     </div>
     <br><br>
